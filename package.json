@@ -6,17 +6,23 @@
   "author": "treemmett <tregan@tregan.me>",
   "license": "MIT",
   "scripts": {
-    "start": "concurrently \"yarn watch\" \"yarn start:server\"",
-    "start:server": "netlify-lambda serve build/lambda --config webpack.lambda.js",
-    "watch": "tsc -w",
+    "start": "concurrently \"yarn start:web\" \"yarn start:server\"",
+    "start:server": "concurrently \"tsc -w\" \"netlify-lambda serve build/lambda --config configs/webpack.lambda.js\"",
+    "start:web": "webpack-dev-server --config=configs/webpack.dev.js",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src"
   },
   "dependencies": {
-    "axios": "^0.19.0"
+    "axios": "^0.19.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
   },
   "devDependencies": {
     "@types/node": "^12.7.5",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
     "@typescript-eslint/eslint-plugin": "^2.3.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6",
     "concurrently": "^4.1.2",
     "dotenv-webpack": "^1.7.0",
     "eslint": "^6.4.0",
@@ -24,10 +30,19 @@
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.14.3",
+    "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.5",
     "netlify-lambda": "^1.6.3",
     "prettier": "^1.18.2",
-    "typescript": "^3.6.3"
+    "react-hot-loader": "^4.12.13",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.1.1",
+    "typescript": "^3.6.3",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1",
+    "webpack-merge": "^4.2.2"
   },
   "husky": {
     "hooks": {
