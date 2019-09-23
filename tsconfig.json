@@ -5,6 +5,7 @@
     "allowJs": true,
     "outDir": "./build",
     "skipLibCheck": true,
+    "esModuleInterop": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "commonjs",

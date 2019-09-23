@@ -11,7 +11,15 @@ module.exports = merge(config, {
     './index.tsx'
   ],
   devServer: {
-    hot: true
+    hot: true,
+    proxy: {
+      '/.netlify/functions': {
+        target: 'http://localhost:9000',
+        pathRewrite: {
+          '^/\\.netlify/functions': ''
+        }
+      }
+    }
   },
   devtool: 'cheap-module-eval-source-map',
   plugins: [

@@ -7,6 +7,7 @@ module.exports = {
       'error',
       { devDependencies: ['configs/*.js'] }
     ],
+    'import/order': 0,
     'prettier/prettier': [
       2,
       {
@@ -16,7 +17,8 @@ module.exports = {
       {
         usePrettierrc: false
       }
-    ]
+    ],
+    'sort-imports': 2
   },
   settings: {
     'import/resolver': {

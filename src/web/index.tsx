@@ -1,8 +1,5 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import * as styles from './Title.scss';
+import Home from './views/Home';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-ReactDOM.render(
-  <div className={styles.name}>foo</div>,
-  document.getElementById('root')
-);
+ReactDOM.render(<Home />, document.getElementById('root'));
