@@ -9,6 +9,9 @@
     "start": "concurrently \"yarn start:web\" \"yarn start:server\"",
     "start:server": "concurrently \"tsc -w\" \"netlify-lambda serve build/lambda --config configs/webpack.lambda.js\"",
     "start:web": "webpack-dev-server --config=configs/webpack.dev.js",
+    "build": "concurrently \"yarn build:server\" \"yarn build:web\"",
+    "build:server": "tsc src/lambda/*.ts --outdir build/lambda && netlify-lambda build build/lambda",
+    "build:web": "webpack --config=configs/webpack.prod.js",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src"
   },
   "dependencies": {
