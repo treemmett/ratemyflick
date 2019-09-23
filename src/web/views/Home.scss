@@ -1,0 +1,52 @@
+@import '../globals';
+
+.view {
+  height: 100%;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.player {
+  @include card;
+  display: flex;
+  align-items: center;
+}
+
+.pic {
+  height: 8em;
+  width: 8em;
+  display: inline-block;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 24px;
+  margin-left: 1em;
+}
+
+.stats {
+  @include card;
+  padding: 0;
+
+  .name {
+    margin: 0.5em 1em;
+  }
+
+  .prop {
+    display: flex;
+    padding: 0.25em;
+
+    &:nth-child(2n + 1) {
+      background-color: rgba(#fff, 0.1);
+    }
+
+    .property,
+    .value {
+      display: inline-block;
+    }
+
+    .value {
+      margin-left: auto;
+    }
+  }
+}

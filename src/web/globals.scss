@@ -1,0 +1,7 @@
+@mixin card {
+  background-color: rgba(#000, 0.3);
+  padding: 0.5em;
+  border-radius: 6px;
+  margin-bottom: 1em;
+  overflow: auto;
+}
