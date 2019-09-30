@@ -103,9 +103,7 @@ const Home: React.FC = () => {
 
         <div className={styles.prop}>
           <div className={styles.property}>KD</div>
-          <div className={styles.value}>
-            {stats.kills && stats.kills.deaths}
-          </div>
+          <div className={styles.value}>{stats.kills && stats.kills.kd}</div>
         </div>
 
         <div className={styles.prop}>
